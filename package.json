@@ -1,0 +1,10 @@
+{
+  "name": "Angry Crabs",
+  "main": "./index.html",
+  "icon": "icon.png",
+  "icon_color": "black",
+  "version": "0.0.1",
+  "author": "Brendan Collins",
+  "website": "http://www.shopbottools.com",
+  "description": "A simple app experiment with a game interface"
+}
