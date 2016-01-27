@@ -6,36 +6,41 @@ $( document ).ready(function() {
       } 
 	});  
 });
+
   // Object to store the App configuration that we'll read from fabmo
 var appConfig = {};
 
-$( document ).ready(function() {
+// $( document ).ready(function() {
 
-    // Get the machine configuration (global for the tool)
-    fabmoDashboard.getConfig(function(err, data) {
-      if(err) {
-        console.log(err);
-      } 
-    });
+//     // Get the machine configuration (global for the tool)
+//     fabmoDashboard.getConfig(function(err, data) {
+//       if(err) {
+//         console.log(err);
+//       } 
+//     });
 
-    // Get the App configuration (specific to this app)
-    fabmoDashboard.getAppConfig(function(err, data) {
-        appConfig = data;
-        for(key in appConfig) {
-            console.info('Key "' + key + '" found in the app config with a value of ' + data[key]);
-            $('#' + key).val(appConfig[key])
-        }
+//     // Get the App configuration (specific to this app)
+//     fabmoDashboard.getAppConfig(function(err, data) {
+//         appConfig = data;
+//         for(key in appConfig) {
+//             console.info('Key "' + key + '" found in the app config with a value of ' + data[key]);
+//             $('#' + key).val(appConfig[key])
+//         }
 		
-		 // For Bill:
-        appConfig.timesAppWasLoaded = appConfig.timesAppWasLoaded ||  0;
-        appConfig.timesAppWasLoaded++;
-        console.log("loaded")
-		console.log("loaded")
-        fabmoDashboard.notify('info', 'App has been loaded ' + appConfig.timesAppWasLoaded + ' times.');
-        fabmoDashboard.setAppConfig(appConfig);
-    });
-}); // document.ready
-//var gamelevel = appConfig.timesAppWasLoaded;
+// 		 // For Bill:
+//         appConfig.timesAppWasLoaded = appConfig.timesAppWasLoaded ||  0;
+//         appConfig.timesAppWasLoaded++;
+//         console.log("loaded")
+// 		console.log("loaded")
+//         fabmoDashboard.notify('info', 'App has been loaded ' + appConfig.timesAppWasLoaded + ' times.');
+//         fabmoDashboard.setAppConfig(appConfig);
+//     });
+// }); // document.ready
+
+
+
+
+var gamelevel = parseInt(localStorage.getItem('gamelevel')) || 1;
 
 $('form').parsley().on('field:success', function() {
     // This event will fire whenever a field successfully validates.
@@ -61,15 +66,13 @@ $('.exit-modal').on('click', function (){
 $('#submit').click(function (e){
 	e.preventDefault();
 	e.stopPropagation();
-	if ( appConfig.timesAppWasLoaded < 3){
-	//gamelevel++;
-	console.log(appConfig.timesAppWasLoaded);
+	if ( gamelevel < 3){
+	gamelevel++;
 	} else {
-		 appConfig.timesAppWasLoaded = 3
-		 
+		 gamelevel= 3 
 	}
- 	levelChecker(appConfig.timesAppWasLoaded);
-
+ 	levelChecker(gamelevel);
+	localStorage.setItem('gamelevel', gamelevel);
 });
 
 var levelChecker = function (level) {
@@ -109,4 +112,4 @@ var levelChecker = function (level) {
 	}
 };
 
-levelChecker(appConfig.timesAppWasLoaded);
+levelChecker(gamelevel);
