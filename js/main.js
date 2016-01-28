@@ -76,10 +76,12 @@ $('#submit').click(function (e){
 });
 
 var levelChecker = function (level) {
-	console.log(level);
+
 		switch (level) {
 	    case 1: 
-		console.log('1');
+		gameplay1.innerHTML = "<br>You are a lowly crab larvae and can only set the diameter and depth of the hole. With experience though you'll soon have more crabby skills!  <br><br>";
+		gameplay2.innerHTML = "";
+		gameplay3.innerHTML = "";
 		$('#level1tab').show();
 		$('#level2tab').hide();
 		$('#level3tab').hide();
@@ -88,8 +90,9 @@ var levelChecker = function (level) {
 		$('.Level3').hide();
 		break;
 		case 2:
-		console.log('2');
-		gameplay.innerHTML = "<br>Congratulations! You have unlocked the Peeler level and now have more options for how holes will be cut <br><br>";
+		gameplay1.innerHTML = "";
+		gameplay2.innerHTML = "<br>Congratulations! You have unlocked the Peeler level and now have more options for how holes will be cut. <br><br>";
+		gameplay3.innerHTML = "";
 		$('#level1tab').hide();
 		$('#level2tab').show();
 		$('#level3tab').hide();
@@ -98,10 +101,9 @@ var levelChecker = function (level) {
 		$('.Level3').hide();
 		break
 		case 3:
-		console.log('3');
-		gameplay2.innerHTML = "<br>Now you're a big-old Jimmy crab! You have unlocked the Hole Pincher level and can now cut oval holes if you want. <br><br>";
-		//$('#proportionX').text("Hole Width (in)");
-		//$('#diameter').placeholder("Hole Width");
+		gameplay1.innerHTML = "";
+		gameplay2.innerHTML = "";
+		gameplay3.innerHTML = "<br>Now you're a big-old Jimmy crab! You have unlocked the Hole Pincher level and can now cut oval holes if you want. <br><br>";
 		$('#level1tab').hide();
 		$('#level2tab').hide();
 		$('#level3tab').show();
