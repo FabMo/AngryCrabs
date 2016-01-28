@@ -69,7 +69,7 @@ $('#submit').click(function (e){
 	if ( gamelevel < 3){
 	gamelevel++;
 	} else {
-		 gamelevel= 3 
+		 gamelevel= 1 
 	}
  	levelChecker(gamelevel);
 	localStorage.setItem('gamelevel', gamelevel);
