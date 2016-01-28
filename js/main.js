@@ -66,7 +66,7 @@ $('.exit-modal').on('click', function (){
 $('#submit').click(function (e){
 	e.preventDefault();
 	e.stopPropagation();
-	if ( gamelevel < 3){
+	if ( gamelevel < 4){
 	gamelevel++;
 	} else {
 		 gamelevel= 1 
@@ -82,34 +82,57 @@ var levelChecker = function (level) {
 		gameplay1.innerHTML = "<br>You are a lowly crab larvae and can only set the diameter and depth of the hole. With experience though you'll soon have more crabby skills!  <br><br>";
 		gameplay2.innerHTML = "";
 		gameplay3.innerHTML = "";
+		gameplay4.innerHTML = "";
 		$('#level1tab').show();
 		$('#level2tab').hide();
 		$('#level3tab').hide();
+		$('#level4tab').hide();
 		$('.Level1').show();
 		$('.Level2').hide();
 		$('.Level3').hide();
+		$('.Level4').hide();		
 		break;
 		case 2:
 		gameplay1.innerHTML = "";
 		gameplay2.innerHTML = "<br>Congratulations! You have unlocked the Peeler level and now have more options for how holes will be cut. <br><br>";
 		gameplay3.innerHTML = "";
+		gameplay4.innerHTML = "";
 		$('#level1tab').hide();
 		$('#level2tab').show();
 		$('#level3tab').hide();
+		$('#level4tab').hide();
 		$('.Level1').show();
 		$('.Level2').show();
 		$('.Level3').hide();
+		$('.Level4').hide();
 		break
 		case 3:
 		gameplay1.innerHTML = "";
 		gameplay2.innerHTML = "";
 		gameplay3.innerHTML = "<br>Now you're a big-old Jimmy crab! You have unlocked the Hole Pincher level and can now cut oval holes if you want. <br><br>";
+		gameplay4.innerHTML = "";
 		$('#level1tab').hide();
 		$('#level2tab').hide();
 		$('#level3tab').show();
+		$('#level4tab').hide();
 		$('.Level1').show();
 		$('.Level2').show();
 		$('.Level3').show();
+		$('.Level4').hide();
+		break;
+		case 4:
+		gameplay1.innerHTML = "";
+		gameplay2.innerHTML = "";
+		gameplay3.innerHTML = "";
+		gameplay4.innerHTML = "<br>I'm about to become dinner, but before they cover me in Old Bay and toss me in boiling water I have one more gift for you...the power of Pocketing.  Use it wisely. <br><br>";
+		$('#level1tab').hide();
+		$('#level2tab').hide();
+		$('#level3tab').hide();
+		$('#level4tab').show();
+		$('.Level1').show();
+		$('.Level2').show();
+		$('.Level3').show();
+		$('.Level4').show();
 		break;
 	}
 };
