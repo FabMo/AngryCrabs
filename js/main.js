@@ -40,7 +40,7 @@ var appConfig = {};
 
 
 
-var gamelevel = parseInt(localStorage.getItem('gamelevel')) || 1;
+var gamelevel = parseInt(localStorage.getItem('gamelevel')) || 0;
 
 $('form').parsley().on('field:success', function() {
     // This event will fire whenever a field successfully validates.
@@ -69,16 +69,39 @@ $('#submit').click(function (e){
 	if ( gamelevel < 4){
 	gamelevel++;
 	} else {
-		 gamelevel= 1 
+		 gamelevel= 1
 	}
  	levelChecker(gamelevel);
 	localStorage.setItem('gamelevel', gamelevel);
 });
+gamelevel = 0;
 
 var levelChecker = function (level) {
 
 		switch (level) {
+			
+		case 0:
+		game_intro.innerHTML = " Angry Crabs is an exploration of an alternate app interface that enables additional interface options as the user gains ";
+		game_intro.innerHTML = game_intro.innerHTML + "experience with cutting. In the beginning most of the options are set to defaults, but each time the app is opened ";
+		game_intro.innerHTML = game_intro.innerHTML + "new options are added. <br> <br>Click the DONE button to move to the next level in this demo, but in a real app you would be cutting. <br><br>";
+		
+	gameplay1.innerHTML = "";
+		gameplay2.innerHTML = "";
+		gameplay3.innerHTML = "";
+		gameplay4.innerHTML = "";
+		$('#level1tab').hide();
+		$('#level2tab').hide();
+		$('#level3tab').hide();
+		$('#level4tab').hide();
+		$('.LevelD').hide();
+		$('.Level1').hide();
+		$('.Level2').hide();
+		$('.Level3').hide();
+		$('.Level4').hide();	
+		break;
+			
 	    case 1: 
+		game_intro.innerHTML = "";	
 		gameplay1.innerHTML = "<br>You are a lowly crab larvae and can only set the diameter and depth of the hole. With experience though you'll soon have more crabby skills!  <br><br>";
 		gameplay2.innerHTML = "";
 		gameplay3.innerHTML = "";
@@ -87,12 +110,14 @@ var levelChecker = function (level) {
 		$('#level2tab').hide();
 		$('#level3tab').hide();
 		$('#level4tab').hide();
+		$('.LevelD').show();
 		$('.Level1').show();
 		$('.Level2').hide();
 		$('.Level3').hide();
 		$('.Level4').hide();		
 		break;
 		case 2:
+		game_intro.innerHTML = "";
 		gameplay1.innerHTML = "";
 		gameplay2.innerHTML = "<br>Congratulations! You have unlocked the Peeler level and now have more options for how holes will be cut. <br><br>";
 		gameplay3.innerHTML = "";
@@ -101,12 +126,14 @@ var levelChecker = function (level) {
 		$('#level2tab').show();
 		$('#level3tab').hide();
 		$('#level4tab').hide();
+		$('.LevelD').show();
 		$('.Level1').show();
 		$('.Level2').show();
 		$('.Level3').hide();
 		$('.Level4').hide();
 		break
 		case 3:
+		game_intro.innerHTML = "";
 		gameplay1.innerHTML = "";
 		gameplay2.innerHTML = "";
 		gameplay3.innerHTML = "<br>Now you're a big-old Jimmy crab! You have unlocked the Hole Pincher level and can now cut oval holes if you want. <br><br>";
@@ -119,8 +146,10 @@ var levelChecker = function (level) {
 		$('.Level2').show();
 		$('.Level3').show();
 		$('.Level4').hide();
+		$('.LevelD').hide();
 		break;
 		case 4:
+		game_intro.innerHTML = "";
 		gameplay1.innerHTML = "";
 		gameplay2.innerHTML = "";
 		gameplay3.innerHTML = "";
@@ -133,6 +162,7 @@ var levelChecker = function (level) {
 		$('.Level2').show();
 		$('.Level3').show();
 		$('.Level4').show();
+		$('.LevelD').hide();
 		break;
 	}
 };

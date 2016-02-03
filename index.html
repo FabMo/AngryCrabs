@@ -30,14 +30,14 @@
                      <legend  id="level1tab" >Larva</legend>
                      <legend  id="level2tab" >Peeler</legend>
                      <legend  id="level3tab" >Jimmy Crab</legend>
-                     <legend  id="level4tab" >Dinner</legend>					 
+                     <legend  id="level4tab" >Cooked</legend>					 
 					 <div id="gameplay1"> </div>
                     <div class="pure-control-group">
-                      <label class='Level1' id="diameter" for="diameter">Diameter (in)</label>
-                      <input class='Level1' id="diameter" type="number" step="any" data-parsley-required="true"  placeholder="1" data-parsley-maxlength="6" data-parsley-min="0" ></span>
+                      <label class='LevelD' for="diameter">Diameter (in)</label>
+                      <input class='LevelD' id="diameter" type="number" step="any" data-parsley-required="true"  placeholder="1" data-parsley-maxlength="6" data-parsley-min="0" ></span>
                     </div>
 				
-					
+					<div id="game_intro"> </div>
                     <div class="pure-control-group">
                       <label class='Level1' for="depth" >Depth (in)</label>
                       <input class='Level1' id="depth" type="number" step="any" data-parsley-required="true" placeholder="1" data-parsley-maxlength="5" data-parsley-min="0"	>
@@ -51,6 +51,7 @@
                           <option value = "0.125" selected > 1/8"</option>
                           <option value = "0.1875"> 3/16"</option>
                           <option value = "0.25"> 1/4"</option>
+						  <option value = "0.375"> 3/8" </option>
                          </select>
                       </div>	
                     <div class="pure-control-group"> 
@@ -78,7 +79,7 @@
                       <input class='Level4'  type="Checkbox" id="check-pocket"  placeholder="Has Arm">
                     </div>					
 
-                    <button  id="submit" type='submit'>Next</button>
+                    <button  id="submit" type='submit'>Done</button>
                   </fieldset>
                 </form>
              
