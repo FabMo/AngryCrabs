@@ -73,20 +73,6 @@ body {
 		font-size: 1em;
 	}	
 }
-.center-bit{
-	background-color: #416cb5;
-	color: #eeeeee;
-	width: 87%;
-	margin-left: 6.5%;
-	margin-right: auto;
-	border: 1px solid #416cb5;
-	text-align: center;
-	margin-bottom: 1em;
-	border-radius: 5px;
-	line-height: 2em;
-	-moz-box-sizing: border-box;
- 		 box-sizing: border-box;
-}
 
 #submit {
 	width: 33%;
@@ -114,13 +100,13 @@ body {
 
 .modal {
 	background-color: #eeeeee;
-	width: 250px;
-   	height: 250px;
+	width: 300px;
+   	height: 450px;
    	position: absolute;
    	left: 50%;
    	top: 50%; 
-   	margin-left: -125px;
-   	margin-top: -125px;
+   	margin-left: -150px;
+   	margin-top: -225px;
    	z-index: 10;
    	border-radius: 5px;
 	display: none;
@@ -128,15 +114,17 @@ body {
 
 .modal-content {
 	background-color: #ffffff;
-	width: 220px;
-   	height: 220px;
+	width: 260px;
+   	height: 410px;
    	position: absolute;
    	left: 50%;
    	top: 50%; 
-   	margin-left: -110px;
-   	margin-top: -110px;
+   	margin-left: -130px;
+   	margin-top: -205px;
 	border-radius: 5px;
+   
 }
+
 
 .modal-container{
 	position: fixed;
@@ -152,12 +140,12 @@ body {
 .modal-content p {
 	letter-spacing: 0em;
 	padding: 1em;
+    line-height: 1.5;
 }
 .exit-modal {
 	background-color: #32B433;
 	color: #eeeeee;
 	width: 50%;
-	margin-top: 20%;
 	margin-left: 25%;
 	margin-right: auto;
 	border: 1px solid #32B433;
