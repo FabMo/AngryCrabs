@@ -77,21 +77,27 @@ $('#submit').click(function(e) {
   localStorage.setItem('gamelevel', gamelevel);
 });
 gamelevel = 0;
-
+$('#crabmo').on('click', function(){
+	$('.modal-content p').text('Where did this stupid crab come from? That\'s Crabmo the Fabmo crab, and this app tell his life story. Follow along as you gain experience and Crabmo goes from a larva to a part of someone\'s tasty crab dinner!'); 
+    	 $('.modal, .modal-container').fadeIn();
+      $('.settings').hide();
+     
+});
 var levelChecker = function(level) {
 
   switch (level) {
 
     case 0:
-      $('.modal-content p').text(' Angry Crabs is an exploration of an alternate app interface that enables additional interface options as the user gains experience with cutting. In the beginning most of the options are set to defaults, but each time the app is opened Click the OKAY button to move to the next level in this demo, but in a real app you would be cutting.');
-      $('.modal, .modal-container').fadeIn();
+      $('.modal-content p').text(' Angry Crabs is an exploration of an alternate app interface that will present you with additional interface options as you cut things and gain experience, much like power-ups in video games.\ \ \ \When you first run the app most of the options are set to default vaues, but each time the app is run a new feature or set of features is added. Click the OKAY button to move to the next level in this demo, but in a real app you would power-up by cutting.');
+
+	 $('.modal, .modal-container').fadeIn();
       $('.settings').hide();
       break;
 
     case 1:
       $('.settings').show();
       game_intro.innerHTML = "";
-      gameplay1.innerHTML = "<br>You are a lowly crab larvae and can only set the diameter and depth of the hole. With experience though you'll soon have more crabby skills!  <br><br>";
+      gameplay1.innerHTML = "<br>You start your life as a lowly crab larvae and can only set the diameter and depth of the hole. With experience though you'll soon have more crabby skills!  <br><br>";
       gameplay2.innerHTML = "";
       gameplay3.innerHTML = "";
       gameplay4.innerHTML = "";
@@ -125,7 +131,7 @@ var levelChecker = function(level) {
       game_intro.innerHTML = "";
       gameplay1.innerHTML = "";
       gameplay2.innerHTML = "";
-      gameplay3.innerHTML = "<br>Now you're a big-old Jimmy crab! You have unlocked the Hole Pincher level and can now cut oval holes if you want. <br><br>";
+      gameplay3.innerHTML = "<br>Now you're a big-old Jimmy crab! You have unlocked the Hole Pincher level and can now cut oval holes if you want. Input the X and Y axis size for the size hole you want, entering the same size in both for a plain-old round hole. <br><br>";
       gameplay4.innerHTML = "";
       $('#level1tab').hide();
       $('#level2tab').hide();
@@ -142,7 +148,7 @@ var levelChecker = function(level) {
       gameplay1.innerHTML = "";
       gameplay2.innerHTML = "";
       gameplay3.innerHTML = "";
-      gameplay4.innerHTML = "<br>I'm about to become dinner, but before they cover me in Old Bay and toss me in boiling water I have one more gift for you...the power of Pocketing.  Use it wisely. <br><br>";
+      gameplay4.innerHTML = "<br>I'm about to become dinner, but before they cover me in Old Bay and toss me in boiling water I have one more gift for you...the power of Pocketing. This lets you completely remove the center plug of a thru-cut hole, or to cut a pocket. Use your new power wisely. <br><br>";
       $('#level1tab').hide();
       $('#level2tab').hide();
       $('#level3tab').hide();
