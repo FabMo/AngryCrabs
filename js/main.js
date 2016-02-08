@@ -78,7 +78,7 @@ $('#submit').click(function(e) {
 });
 gamelevel = 0;
 $('#crabmo').on('click', function(){
-	$('.modal-content p').text('Where did this stupid crab come from? That\'s Crabmo the Fabmo crab, and this app tell his life story. Follow along as you gain experience and Crabmo goes from a larva to a part of someone\'s tasty crab dinner!'); 
+	$('.modal-content p').html('<p>Where did this stupid crab come from? That\'s Crabmo the Fabmo crab, and this app tell his life story. </p><p>Follow along as you gain experience and Crabmo goes from a larva to a part of someone\'s tasty crab dinner!</p>'); 
     	 $('.modal, .modal-container').fadeIn();
       $('.settings').hide();
      
@@ -88,7 +88,7 @@ var levelChecker = function(level) {
   switch (level) {
 
     case 0:
-      $('.modal-content p').text(' Angry Crabs is an exploration of an alternate app interface that will present you with additional interface options as you cut things and gain experience, much like power-ups in video games.\ \ \ \When you first run the app most of the options are set to default vaues, but each time the app is run a new feature or set of features is added. Click the OKAY button to move to the next level in this demo, but in a real app you would power-up by cutting.');
+      $('.modal-content p').html(' <p>Angry Crabs is an exploration of an alternate app interface that will present you with additional interface options as you cut things and gain experience, much like power-ups in video games.</p><p> When you first run the app most of the options are set to default vaues, but each time the app is run a new feature or set of features is added. Click the OKAY button to move to the next level in this demo, but in a real app you would power-up by cutting.\</p>');
 
 	 $('.modal, .modal-container').fadeIn();
       $('.settings').hide();
@@ -97,7 +97,7 @@ var levelChecker = function(level) {
     case 1:
       $('.settings').show();
       game_intro.innerHTML = "";
-      gameplay1.innerHTML = "<br>You start your life as a lowly crab larvae and can only set the diameter and depth of the hole. With experience though you'll soon have more crabby skills!  <br><br>";
+      gameplay1.innerHTML = "You start your life as a lowly crab larvae and can only set the diameter and depth of the hole. With experience though you'll soon have more crabby skills!  <br><br>";
       gameplay2.innerHTML = "";
       gameplay3.innerHTML = "";
       gameplay4.innerHTML = "";
@@ -163,3 +163,11 @@ var levelChecker = function(level) {
 };
 
 levelChecker(gamelevel);
+/* If this app did anything, this would be what did it!
+fabmo.submitJob({
+            file: beamerCode,
+            filename : 'beamer-' + holeSpacing.toFixed(2) + 'x' + beamWidth.toFixed(2) + '.sbp',
+            name : 'Beamer',
+            description : 'Cut a beam with ' + holeDiameter + '" diameter holes that are ' + holeSpacing + '" apart' 
+        });
+	*/
