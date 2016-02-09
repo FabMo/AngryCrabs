@@ -78,7 +78,7 @@ $('#submit').click(function(e) {
 });
 gamelevel = 0;
 $('#crabmo').on('click', function(){
-	$('.modal-content p').html('<p>Where did this stupid crab come from? That\'s Crabmo the Fabmo crab, and this app tell his life story. </p><p>Follow along as you gain experience and Crabmo goes from a larva to a part of someone\'s tasty crab dinner!</p>'); 
+	$('.modal-content p').html('<p>What\'s with this stupid crab? That\'s Crabmo the un-official Fabmo mascot, and this app tells his life story. </p>Follow along as you gain experience and Crabmo goes from a tiny crab larva to a part of someone\'s tasty crab dinner!'); 
     	 $('.modal, .modal-container').fadeIn();
       $('.settings').hide();
      
@@ -88,7 +88,7 @@ var levelChecker = function(level) {
   switch (level) {
 
     case 0:
-      $('.modal-content p').html(' <p>Angry Crabs is an exploration of an alternate app interface that will present you with additional interface options as you cut things and gain experience, much like power-ups in video games.</p><p> When you first run the app most of the options are set to default vaues, but each time the app is run a new feature or set of features is added. Click the OKAY button to move to the next level in this demo, but in a real app you would power-up by cutting.\</p>');
+      $('.modal-content p').html(' <p>Angry Crabs is an exploration of an alternate app interface that presents you with additional interface elements as you cut jobs and gain experience, much like power-ups in video games.</p><p>When you first run an app like this, most of the options are set to default values. Each time the app is run though a new feature or set of features is added. Click the OKAY button to move to the next level in this demo, but in a real app you would power-up by cutting.</p>');
 
 	 $('.modal, .modal-container').fadeIn();
       $('.settings').hide();
@@ -158,6 +158,7 @@ var levelChecker = function(level) {
       $('.Level3').show();
       $('.Level4').show();
       $('.LevelD').hide();
+	  
       break;
   }
 };

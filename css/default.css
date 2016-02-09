@@ -100,8 +100,8 @@ body {
 
 .modal {
 	background-color: #eeeeee;
-	width: 300px;
-   	height: 450px;
+	width: 400px;
+   	height: 550px;
    	position: absolute;
    	left: 50%;
    	top: 50%; 
@@ -114,13 +114,13 @@ body {
 
 .modal-content {
 	background-color: #ffffff;
-	width: 260px;
-   	height: 410px;
+	width: 360px;
+   	height: 510px;
    	position: absolute;
    	left: 50%;
    	top: 50%; 
-   	margin-left: -130px;
-   	margin-top: -205px;
+   	margin-left: -180px;
+   	margin-top: -255px;
 	border-radius: 5px;
    
 }
