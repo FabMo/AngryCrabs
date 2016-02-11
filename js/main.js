@@ -78,7 +78,7 @@ $('#submit').click(function(e) {
 });
 gamelevel = 0;
 $('#crabmo').on('click', function(){
-	$('.modal-content p').html('<p>What\'s with this stupid crab? That\'s Crabmo the un-official Fabmo mascot, and this app tells his life story. </p>Follow along as you gain experience and Crabmo goes from a tiny crab larva to a part of someone\'s tasty crab dinner!'); 
+	$('.modal-content p').html('What\'s with this stupid crab? That\'s Crabmo the un-official Fabmo mascot, and this app tells his life story.Follow along as you gain experience and Crabmo goes from a tiny crab larva to a part of someone\'s tasty crab dinner!'); 
     	 $('.modal, .modal-container').fadeIn();
       $('.settings').hide();
      
