@@ -1,44 +1,15 @@
-/*$(document).ready(function() {
-  $('.advanced').hide();
-  fabmoDashboard.getConfig(function(err, data) {
+$(document).ready(function() {
+ // $('.advanced').hide();
+  fabmo.getConfig(function(err, data) {
     if (err) {
       console.log(err);
     }
   });
 });
-*/
+
 
 // Object to store the App configuration that we'll read from fabmo
 var appConfig = {};
-
-// $( document ).ready(function() {
-
-//     // Get the machine configuration (global for the tool)
-//     fabmoDashboard.getConfig(function(err, data) {
-//       if(err) {
-//         console.log(err);
-//       } 
-//     });
-
-//     // Get the App configuration (specific to this app)
-//     fabmoDashboard.getAppConfig(function(err, data) {
-//         appConfig = data;
-//         for(key in appConfig) {
-//             console.info('Key "' + key + '" found in the app config with a value of ' + data[key]);
-//             $('#' + key).val(appConfig[key])
-//         }
-
-// 		 // For Bill:
-//         appConfig.timesAppWasLoaded = appConfig.timesAppWasLoaded ||  0;
-//         appConfig.timesAppWasLoaded++;
-//         console.log("loaded")
-// 		console.log("loaded")
-//         fabmoDashboard.notify('info', 'App has been loaded ' + appConfig.timesAppWasLoaded + ' times.');
-//         fabmoDashboard.setAppConfig(appConfig);
-//     });
-// }); // document.ready
-
-
 
 
 var gamelevel = parseInt(localStorage.getItem('gamelevel')) || 0;
@@ -69,15 +40,106 @@ $('.exit-modal').on('click', function() {
 $('#submit').click(function(e) {
   e.preventDefault();
   e.stopPropagation();
+  
+
   if (gamelevel < 4) {
     gamelevel++;
   } else {
-    gamelevel = 1
-  }
+   gamelevel = 4
+ }
   levelChecker(gamelevel);
   localStorage.setItem('gamelevel', gamelevel);
+  
+		//var xMax = data.machine.envelope.xmax;
+		//  var yMax = data.machine.envelope.ymax;
+		//  var xCenter = xMax/2;
+		//  var yCenter = yMax/2;
+        
+  		var xCenter = 3;
+		var yCenter = 4;      
+		  var diameter
+          if (gamelevel = 4) {
+              diameter = 1
+              }
+              else {
+                  diameter = parseFloat($('#diameter').val());   
+              }
+              
+         
+          
+		  var speed = parseFloat($('#feed-rate').val());
+		  var cutThrough = parseFloat($('#cut-through').val());
+		  var depth = Math.abs(parseFloat($('#depth').val()));
+		  var bitDiameter = parseFloat($('#bit-diameter').val());
+          var proportionX = parseFloat($('#holeWidth').val());
+		  console.log("proportionX = " + proportionX)
+          var proportionY = parseFloat($('#holeHeight').val());
+		  console.log("proportionY = " + proportionY)		  
+
+          var pocketed
+          if ($('#check-pocket').prop('checked')) {
+              pocketed = "2";   
+          }
+          else
+          {
+              pocketed = "";
+          }           
+              
+
+           
+          if (gamelevel = 4) {
+              console.log("changed")
+              diameter = 1
+              }
+              else {
+                  diameter = parseFloat($('#diameter').val());   
+				 console.log("not changed") 
+              }
+              
+
+		  
+		  var actualDiameter = (diameter - bitDiameter);
+		 // console.log(depth);
+		  var depthTotal = depth + cutThrough;
+		  //console.log(depthTotal);
+		  var maxPlunge = bitDiameter * .75;
+		  var passes = Math.ceil(depthTotal/maxPlunge);
+		  //console.log(passes);
+		  var plunge = (0-(depthTotal/passes)).toFixed(5);
+		  var shopbotCode = ["'Simple Circle'", 
+//		  "'Center: " + xCenter + "," + yCenter + "  Diameter: " + diameter + "'",
+		  "'Bit Diameter: " + bitDiameter + "'",
+		  "'Safe Z'",
+		  "JZ, 1",
+		  "'Spindle On'",
+          //"VC, " + bitDiameter,
+		  "SO, 1,1",
+		  "MS,"+speed,
+		  "pause 3",
+		  "CP," + actualDiameter + "," + xCenter + "," + yCenter + ",T,,,," + plunge + "," + passes + "," + proportionX + ", " + proportionY + "," + pocketed + ",,1",
+		  "'Safe Z'",
+		  "JZ, 1",
+		  "'Spindle Off'",
+		  "SO, 1,0",
+		  "'Jog Home'",
+		  "J2, 0,0"
+		  ];
+		  
+
+       var holeCode = shopbotCode.join('\n');  
+         
+        fabmo.submitJob({
+            file: holeCode,
+            filename : 'Hole-' + diameter + 'diameter- ' + depth + ' deep.sbp',
+            name : 'Holesaw',
+            description : 'Cut a hole that is ' + diameter + ' in diameter',  
+        });
+	
+  
+  
+  
 });
-gamelevel = 0;
+gamelevel = 4;
 $('#crabmo').on('click', function(){
 	$('.modal-content p').html('<p>What\'s with this stupid crab? That\'s Crabmo the un-official Fabmo mascot, and this app tells his life story.</p><p>Follow along as you gain experience and Crabmo goes from a tiny crab larva to a part of someone\'s tasty crab dinner!</p>'); 
     	 $('.modal, .modal-container').fadeIn();
@@ -163,13 +225,4 @@ var levelChecker = function(level) {
       break;
   }
 };
-
 levelChecker(gamelevel);
-/* If this app did anything, this would be what did it!
-fabmo.submitJob({
-            file: beamerCode,
-            filename : 'beamer-' + holeSpacing.toFixed(2) + 'x' + beamWidth.toFixed(2) + '.sbp',
-            name : 'Beamer',
-            description : 'Cut a beam with ' + holeDiameter + '" diameter holes that are ' + holeSpacing + '" apart' 
-        });
-	*/
