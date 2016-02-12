@@ -2,6 +2,7 @@ body {
 	font-family: sans-serif;
 	background-color: #efffff;
 	color: #626366;
+    font-size: .85em;
 }
 .title {
 	margin-left: 1em;
@@ -26,7 +27,10 @@ body {
 	-moz-box-sizing: border-box;
  		 box-sizing: border-box;
 }
-
+legend{
+font-size: 1.5em; 
+    
+}
 
 
 .depth-id{
@@ -90,6 +94,7 @@ body {
 .content{
 	padding-top: 1em;
 	padding-left: 1em;
+    
 }
 
 .content:children {
@@ -101,7 +106,7 @@ body {
 .modal {
 	background-color: #eeeeee;
 	width: 400px;
-   	height: 550px;
+   	height: auto;
    	position: absolute;
    	left: 50%;
    	top: 50%; 
@@ -115,12 +120,12 @@ body {
 .modal-content {
 	background-color: #ffffff;
 	width: 360px;
-   	height: 510px;
+   	height: auto;
    	position: absolute;
    	left: 50%;
    	top: 50%; 
    	margin-left: -180px;
-   	margin-top: -255px;
+   	/*margin-top: -255px;*/
 	border-radius: 5px;
    
 }
@@ -139,8 +144,8 @@ body {
 }
 .modal-content p {
 	letter-spacing: 0em;
-	padding: 1em;
-    line-height: 1.5;
+	padding: .25em 1em .5em 1em;
+   /* line-height: 1.5;*/
 }
 .exit-modal {
 	background-color: #32B433;

@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
   $('.advanced').hide();
   fabmoDashboard.getConfig(function(err, data) {
     if (err) {
@@ -6,6 +6,7 @@ $(document).ready(function() {
     }
   });
 });
+*/
 
 // Object to store the App configuration that we'll read from fabmo
 var appConfig = {};
@@ -78,7 +79,7 @@ $('#submit').click(function(e) {
 });
 gamelevel = 0;
 $('#crabmo').on('click', function(){
-	$('.modal-content p').html('What\'s with this stupid crab? That\'s Crabmo the un-official Fabmo mascot, and this app tells his life story.Follow along as you gain experience and Crabmo goes from a tiny crab larva to a part of someone\'s tasty crab dinner!'); 
+	$('.modal-content p').html('<p>What\'s with this stupid crab? That\'s Crabmo the un-official Fabmo mascot, and this app tells his life story.</p><p>Follow along as you gain experience and Crabmo goes from a tiny crab larva to a part of someone\'s tasty crab dinner!</p>'); 
     	 $('.modal, .modal-container').fadeIn();
       $('.settings').hide();
      
@@ -88,7 +89,7 @@ var levelChecker = function(level) {
   switch (level) {
 
     case 0:
-      $('.modal-content p').html(' <p>Angry Crabs is an exploration of an alternate app interface that presents you with additional interface elements as you cut jobs and gain experience, much like power-ups in video games.</p><p>When you first run an app like this, most of the options are set to default values. Each time the app is run though a new feature or set of features is added. Click the OKAY button to move to the next level in this demo, but in a real app you would power-up by cutting.</p>');
+      $('.modal-content p').html(' <p>Angry Crabs is an exploration of an alternate app interface that presents you with additional interface elements as you cut jobs and gain experience, much like power-ups in video games.</p><p>When you first run an app like this, most of the options are set to default values. Each time the app is run though a new feature or set of features is added. Click the OKAY button to move to the next level in this demo, but in a real app you would power-up each time you ran the app.</p>');
 
 	 $('.modal, .modal-container').fadeIn();
       $('.settings').hide();
