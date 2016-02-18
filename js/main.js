@@ -58,7 +58,7 @@ $('#submit').click(function(e) {
   		var xCenter = 3;
 		var yCenter = 4;      
 		  var diameter
-          if (gamelevel = 4) {
+          if (gamelevel == 4) {
               diameter = 1
               }
               else {
@@ -87,7 +87,7 @@ $('#submit').click(function(e) {
               
 
            
-          if (gamelevel = 4) {
+          if (gamelevel == 4) {
               console.log("changed")
               diameter = 1
               }
@@ -139,7 +139,7 @@ $('#submit').click(function(e) {
   
   
 });
-gamelevel = 4;
+gamelevel = 0;
 $('#crabmo').on('click', function(){
 	$('.modal-content p').html('<p>What\'s with this stupid crab? That\'s Crabmo the un-official Fabmo mascot, and this app tells his life story.</p><p>Follow along as you gain experience and Crabmo goes from a tiny crab larva to a part of someone\'s tasty crab dinner!</p>'); 
     	 $('.modal, .modal-container').fadeIn();
